@@ -1,8 +1,6 @@
 
 import streamlit as st
 from calArea import CalcArea, CalcRiser
-import matplotlib.pyplot as plt
-import numpy as np
 import csv 
 
 def savecsv_gating(filename):
