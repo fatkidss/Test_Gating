@@ -3,7 +3,7 @@ import streamlit as st
 from calArea import CalcArea, CalcRiser
 import csv 
 
-def savecsv_gating(filename):
+def savecsv_gating(filename,data):
     # field names 
     fields = ['Head', 'LossFactor', 'FlowRate', 'CastingHeight_P', 'TotalCasting_C', 'Name', 'Area', 'Width', 'Height']  
     # data rows of csv file 
@@ -27,7 +27,7 @@ def savecsv_riser(riser_file,riser_data):
         csvwriter = csv.writer(csvfile) 
         csvwriter.writerow(riser_header)
         csvwriter.writerows(riser_data)
-ch = st.radio("รายก่รคำนวณ",("CalGating","CatRiser","Other"))
+ch = st.radio("รายการคำนวณ",("CalGating","CatRiser","Other")) #ตัวเลือก
 
 if ch == "CalGating":
     h = st.number_input("กรุณาเลือกตัวเลขความสูง",min_value=0,max_value=400,value=200,step=5)
